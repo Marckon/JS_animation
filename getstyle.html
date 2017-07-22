@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/move.js"></script>
+    <style type="text/css">
+        div{
+            width:200px;
+            height:200px;
+            background-color: red;
+            opacity: 0.3;
+            filter: alpha(opacity:30);
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function () {
+            var block = document.getElementsByTagName('div')[0];
+            timer = null;
+            block.onmouseover = function () {
+                move({opacity: 100, width: 800, height:210}, this);
+            }
+            block.onmouseout = function () {
+                move({opacity: 30, width: 200, height:200}, this)
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

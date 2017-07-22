@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>taobao</title>
+    <script src="js/move.js"></script>
+    <style type="text/css">
+        ul{
+            width: 425px;
+            height:350px;
+            background-color: lightgrey;
+            margin: 0 auto;
+            padding: 10px 10px 5px 20px;
+        }
+        p{
+            text-align: center;
+            font: 16px/0.1em black, 'Microsoft YaHei UI';
+            cursor: pointer;
+        }
+        li{
+            list-style: none;
+            float:left;
+
+            margin:20px;
+        }
+        div{
+            width: 100px;
+            height:100px;
+            cursor:pointer;
+
+        }
+        #phone{
+            background: url("images/phone.png") no-repeat ;
+            background-position-x: 10px;
+            background-position-y: 10px;
+            background-size: 80% 80%;
+
+        }
+        #game{
+            background: url("images/game.png") no-repeat;
+            background-position-x: 10px;
+            background-position-y: 10px;
+            background-size: 80% 80%;
+
+        }
+        #trans{
+            background: url("images/trans.png") no-repeat ;
+            background-position-x: 10px;
+            background-position-y: 10px;
+            background-size: 80% 80%;
+
+        }
+        #power{
+            background: url("images/power.png") no-repeat;
+            background-position-x: 10px;
+            background-position-y: 10px;
+            background-size: 80% 80%;
+
+        }
+        #lottery{
+            background: url("images/lottery.png") no-repeat;
+            background-position-x: 10px;
+            background-position-y: 10px;
+            background-size: 80% 80%;
+
+        }
+        #hotel{
+            background: url("images/hotel.png") no-repeat ;
+            background-position-x: 10px;
+            background-position-y: 10px;
+            background-size: 80% 80%;
+
+        }
+
+    </style>
+    <script type="text/javascript">
+        window.onload=function () {
+            var blocks=document.getElementsByTagName('div');
+            for(i=0;i<blocks.length;i++){
+                blocks[i].timer=null;
+                blocks[i].onmouseover=function () {
+                    var _this=this;
+                    move({opacity:0, 'background-position-y': -80},this,function () {
+                        _this.style.backgroundPositionY='60px';
+                        move({opacity:100, 'background-position-y': 10},_this);
+                    });
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+<ul>
+    <li><div id="phone"></div><p>话费</p></li>
+    <li><div id="hotel"></div><p>酒店</p></li>
+    <li><div id="lottery"></div><p>彩票</p></li>
+    <li><div id="game"></div><p>游戏</p></li>
+    <li><div id="power"></div><p>电费</p></li>
+    <li><div id="trans"></div><p>公交</p></li>
+</ul>
+</body>
+</html>
